@@ -1,3 +1,5 @@
 class Instance < ActiveRecord::Base
-  attr_accessible :name, :object_id
+  attr_accessible :name, :item_id
+  belongs_to :item
 end
+

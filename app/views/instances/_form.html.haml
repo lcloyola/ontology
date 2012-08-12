@@ -10,7 +10,8 @@
     = f.label :name
     = f.text_field :name
   .field
-    = f.label :object_id
-    = f.number_field :object_id
+    = f.label :item_id
+    = collection_select :instance, :item_id, Item.all, :id, :name
   .actions
     = f.submit 'Save'
+

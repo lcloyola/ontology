@@ -23,7 +23,7 @@ ActiveRecord::Schema.define(:version => 20120812082712) do
 
   create_table "instances", :force => true do |t|
     t.string   "name"
-    t.integer  "object_id"
+    t.integer  "item_id"
     t.datetime "created_at", :null => false
     t.datetime "updated_at", :null => false
   end

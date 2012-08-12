@@ -5,8 +5,9 @@
   = @instance.name
 %p
   %b Object:
-  = @instance.object_id
+  = @instance.item.name
 
 = link_to 'Edit', edit_instance_path(@instance)
 \|
 = link_to 'Back', instances_path
+
