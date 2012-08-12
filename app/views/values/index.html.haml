@@ -1,0 +1,21 @@
+%h1 Listing values
+
+%table
+  %tr
+    %th Name
+    %th Descriptor
+    %th
+    %th
+    %th
+
+  - @values.each do |value|
+    %tr
+      %td= value.name
+      %td= value.descriptor_id
+      %td= link_to 'Show', value
+      %td= link_to 'Edit', edit_value_path(value)
+      %td= link_to 'Destroy', value, :confirm => 'Are you sure?', :method => :delete
+
+%br
+
+= link_to 'New Value', new_value_path

@@ -1,4 +1,6 @@
 Ontology::Application.routes.draw do
+  resources :values
+
   resources :descriptors
 
   resources :items
