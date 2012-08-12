@@ -1,0 +1,23 @@
+%h1 Listing subitems
+
+%table
+  %tr
+    %th Relationship
+    %th Parent
+    %th Child
+    %th
+    %th
+    %th
+
+  - @subitems.each do |subitem|
+    %tr
+      %td= subitem.relationship_id
+      %td= subitem.parent_id
+      %td= subitem.child_id
+      %td= link_to 'Show', subitem
+      %td= link_to 'Edit', edit_subitem_path(subitem)
+      %td= link_to 'Destroy', subitem, :confirm => 'Are you sure?', :method => :delete
+
+%br
+
+= link_to 'New Subitem', new_subitem_path

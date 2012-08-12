@@ -1,0 +1,15 @@
+%p#notice= notice
+
+%p
+  %b Relationship:
+  = @subitem.relationship_id
+%p
+  %b Parent:
+  = @subitem.parent_id
+%p
+  %b Child:
+  = @subitem.child_id
+
+= link_to 'Edit', edit_subitem_path(@subitem)
+\|
+= link_to 'Back', subitems_path
