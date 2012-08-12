@@ -1,4 +1,4 @@
-- if @value.present? or !@characteristic.descriptor.values.nil?
+- if @value.present?
   = collection_select :characteristic, :value, @value, :id, :name
 - else
   = text_field_tag :value

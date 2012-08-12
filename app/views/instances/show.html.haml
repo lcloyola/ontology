@@ -6,7 +6,12 @@
 %p
   %b Object:
   = @instance.item.name
-
+%p
+  %b Characteristics:
+  - @instance.characteristics.each do |c|
+    %li
+      %b= c.descriptor.name
+      = c.descriptor.values.nil? ? c.value : Value.find(c.value).name
 = link_to 'Edit', edit_instance_path(@instance)
 \|
 = link_to 'Back', instances_path

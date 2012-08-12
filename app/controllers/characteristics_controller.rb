@@ -48,6 +48,7 @@ class CharacteristicsController < ApplicationController
 
     respond_to do |format|
       if @characteristic.save
+        @characteristic.update_attributes(:value => params[:value]) if @characteristic.descriptor.values.empty?
         format.html { redirect_to @characteristic, notice: 'Characteristic was successfully created.' }
         format.json { render json: @characteristic, status: :created, location: @characteristic }
       else
@@ -61,9 +62,9 @@ class CharacteristicsController < ApplicationController
   # PUT /characteristics/1.json
   def update
     @characteristic = Characteristic.find(params[:id])
-
     respond_to do |format|
       if @characteristic.update_attributes(params[:characteristic])
+        @characteristic.update_attributes(:value => params[:value]) if @characteristic.descriptor.values.empty?
         format.html { redirect_to @characteristic, notice: 'Characteristic was successfully updated.' }
         format.json { head :no_content }
       else

@@ -2,16 +2,13 @@
 
 %p
   %b Descriptor:
-  = @characteristic.descriptor_id
+  = @characteristic.descriptor.name
 %p
   %b Instance:
   = @characteristic.instance.name
 %p
   %b Value:
-  - if @characteristic.descriptor.values.nil?
-    = @characteristic.value
-  - else
-    = Value.find(@characteristic.value).name
+  = @characteristic.descriptor.values.empty? ? @characteristic.value : Value.find(@characteristic.value).name
 
 = link_to 'Edit', edit_characteristic_path(@characteristic)
 \|
