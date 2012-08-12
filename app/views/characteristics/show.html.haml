@@ -5,11 +5,15 @@
   = @characteristic.descriptor_id
 %p
   %b Instance:
-  = @characteristic.instance_id
+  = @characteristic.instance.name
 %p
   %b Value:
-  = @characteristic.value
+  - if @characteristic.descriptor.values.nil?
+    = @characteristic.value
+  - else
+    = Value.find(@characteristic.value).name
 
 = link_to 'Edit', edit_characteristic_path(@characteristic)
 \|
 = link_to 'Back', characteristics_path
+

@@ -36,6 +36,9 @@ class CharacteristicsController < ApplicationController
   # GET /characteristics/1/edit
   def edit
     @characteristic = Characteristic.find(params[:id])
+    if @characteristic.descriptor.values.present?
+      @value = @characteristic.descriptor.values
+    end
   end
 
   # POST /characteristics
