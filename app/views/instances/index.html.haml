@@ -1,0 +1,21 @@
+%h1 Listing instances
+
+%table
+  %tr
+    %th Name
+    %th Object
+    %th
+    %th
+    %th
+
+  - @instances.each do |instance|
+    %tr
+      %td= instance.name
+      %td= instance.object_id
+      %td= link_to 'Show', instance
+      %td= link_to 'Edit', edit_instance_path(instance)
+      %td= link_to 'Destroy', instance, :confirm => 'Are you sure?', :method => :delete
+
+%br
+
+= link_to 'New Instance', new_instance_path

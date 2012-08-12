@@ -1,4 +1,6 @@
 Ontology::Application.routes.draw do
+  resources :instances
+
   resources :values
 
   resources :descriptors
