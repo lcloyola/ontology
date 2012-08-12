@@ -1,0 +1,19 @@
+= form_for @characteristic do |f|
+  -if @characteristic.errors.any?
+    #error_explanation
+      %h2= "#{pluralize(@characteristic.errors.count, "error")} prohibited this characteristic from being saved:"
+      %ul
+        - @characteristic.errors.full_messages.each do |msg|
+          %li= msg
+
+  .field
+    = f.label :descriptor_id
+    = f.number_field :descriptor_id
+  .field
+    = f.label :instance_id
+    = f.number_field :instance_id
+  .field
+    = f.label :value
+    = f.text_field :value
+  .actions
+    = f.submit 'Save'

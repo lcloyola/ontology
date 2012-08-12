@@ -1,0 +1,15 @@
+%p#notice= notice
+
+%p
+  %b Descriptor:
+  = @characteristic.descriptor_id
+%p
+  %b Instance:
+  = @characteristic.instance_id
+%p
+  %b Value:
+  = @characteristic.value
+
+= link_to 'Edit', edit_characteristic_path(@characteristic)
+\|
+= link_to 'Back', characteristics_path

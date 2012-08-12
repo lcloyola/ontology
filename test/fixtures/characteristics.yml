@@ -1,0 +1,11 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/Fixtures.html
+
+one:
+  descriptor_id: 1
+  instance_id: 1
+  value: MyString
+
+two:
+  descriptor_id: 1
+  instance_id: 1
+  value: MyString
