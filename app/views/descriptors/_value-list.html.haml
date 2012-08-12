@@ -1,0 +1,5 @@
+- if @value.present?
+  = collection_select :chracteristic, :value, @value, :id, :name
+- else
+  = text_field_tag :value
+

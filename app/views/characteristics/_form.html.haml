@@ -8,12 +8,13 @@
 
   .field
     = f.label :descriptor_id
-    = f.number_field :descriptor_id
+    = collection_select :chracteristic, :descriptor_id, Descriptor.all, :id, :name
   .field
     = f.label :instance_id
-    = f.number_field :instance_id
+    = collection_select :chracteristic, :instance_id, Instance.all, :id, :name
   .field
     = f.label :value
-    = f.text_field :value
+    .value-list= render "descriptors/value-list"
   .actions
     = f.submit 'Save'
+

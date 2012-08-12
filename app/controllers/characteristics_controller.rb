@@ -25,7 +25,8 @@ class CharacteristicsController < ApplicationController
   # GET /characteristics/new.json
   def new
     @characteristic = Characteristic.new
-
+    @descriptor = Descriptor.all
+    @value = []
     respond_to do |format|
       format.html # new.html.erb
       format.json { render json: @characteristic }
@@ -81,3 +82,4 @@ class CharacteristicsController < ApplicationController
     end
   end
 end
+

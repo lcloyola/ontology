@@ -13,3 +13,14 @@
 //= require jquery
 //= require jquery_ujs
 //= require_tree .
+$(document).ready(function(){
+  $("#chracteristic_descriptor_id").change(function() {
+    var descriptor = $('select#chracteristic_descriptor_id :selected').val();
+    if(descriptor == "") descriptor="0";
+    jQuery.get('/descriptors/value_by_descriptor/' + descriptor, function(data){
+        $(".value-list").html(data);
+    })
+    return false;
+  });
+});
+

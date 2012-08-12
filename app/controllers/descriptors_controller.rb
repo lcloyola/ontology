@@ -1,6 +1,13 @@
 class DescriptorsController < ApplicationController
   # GET /descriptors
   # GET /descriptors.json
+  def value_by_descriptor
+  if params[:id].present?
+    @value = Descriptor.find(params[:id]).values
+  end
+  render :partial => "value-list", :locals => { :students => @value }
+  end
+
   def index
     @descriptors = Descriptor.all
 
@@ -81,3 +88,4 @@ class DescriptorsController < ApplicationController
     end
   end
 end
+

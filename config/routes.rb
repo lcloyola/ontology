@@ -8,6 +8,7 @@ Ontology::Application.routes.draw do
   resources :descriptors
 
   resources :items
+  get '/descriptors/value_by_descriptor/:id' => 'descriptors#value_by_descriptor'
 
   # The priority is based upon order of creation:
   # first created -> highest priority.
@@ -66,3 +67,4 @@ Ontology::Application.routes.draw do
   # Note: This route will make all actions in every controller accessible via GET requests.
   # match ':controller(/:action(/:id))(.:format)'
 end
+
