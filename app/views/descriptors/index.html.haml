@@ -1,0 +1,24 @@
+%h1 Listing descriptors
+
+%table
+  %tr
+    %th Name
+    %th Item
+    %th Datatype
+    %th
+    %th
+    %th
+
+  - @descriptors.each do |descriptor|
+    %tr
+      %td= descriptor.name
+      %td= descriptor.item.name
+      %td= descriptor.datatype
+      %td= link_to 'Show', descriptor
+      %td= link_to 'Edit', edit_descriptor_path(descriptor)
+      %td= link_to 'Destroy', descriptor, :confirm => 'Are you sure?', :method => :delete
+
+%br
+
+= link_to 'New Descriptor', new_descriptor_path
+

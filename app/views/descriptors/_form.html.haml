@@ -1,0 +1,20 @@
+= form_for @descriptor do |f|
+  -if @descriptor.errors.any?
+    #error_explanation
+      %h2= "#{pluralize(@descriptor.errors.count, "error")} prohibited this descriptor from being saved:"
+      %ul
+        - @descriptor.errors.full_messages.each do |msg|
+          %li= msg
+
+  .field
+    = f.label :name
+    = f.text_field :name
+  .field
+    = f.label :item_id
+    = collection_select :descriptor, :item_id, Item.all, :id, :name
+  .field
+    = f.label :datatype
+    = f.select :datatype, [['string', 0],['datetine', 1],['file', 2]]
+  .actions
+    = f.submit 'Save'
+

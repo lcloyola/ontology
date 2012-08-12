@@ -1,4 +1,8 @@
 Ontology::Application.routes.draw do
+  resources :descriptors
+
+  resources :items
+
   # The priority is based upon order of creation:
   # first created -> highest priority.
 
