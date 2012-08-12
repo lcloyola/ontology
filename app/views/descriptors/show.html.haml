@@ -10,6 +10,11 @@
   %b Datatype:
   = @descriptor.datatype
 
+- if @descriptor.values.present?
+  %b Values:
+  - @descriptor.values.each do |v|
+    = v.name
+
 = link_to 'Edit', edit_descriptor_path(@descriptor)
 \|
 = link_to 'Back', descriptors_path
