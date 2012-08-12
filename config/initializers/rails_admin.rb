@@ -31,7 +31,7 @@ RailsAdmin.config do |config|
 
   #  ==> Included models
   # Add all excluded models here:
-  # config.excluded_models = [Characteristic, Descriptor, Instance, Item, Value]
+  config.excluded_models = []
 
   # Add models here if you want to go 'whitelist mode':
   # config.included_models = [Characteristic, Descriptor, Instance, Item, Value]
@@ -81,13 +81,13 @@ RailsAdmin.config do |config|
 
   # config.model Characteristic do
   #   # Found associations:
-  #     configure :descriptor, :belongs_to_association 
+  #     configure :descriptor, :belongs_to_association
   #     configure :instance, :belongs_to_association   #   # Found columns:
-  #     configure :id, :integer 
-  #     configure :descriptor_id, :integer         # Hidden 
-  #     configure :instance_id, :integer         # Hidden 
-  #     configure :value, :string 
-  #     configure :created_at, :datetime 
+  #     configure :id, :integer
+  #     configure :descriptor_id, :integer         # Hidden
+  #     configure :instance_id, :integer         # Hidden
+  #     configure :value, :string
+  #     configure :created_at, :datetime
   #     configure :updated_at, :datetime   #   # Sections:
   #   list do; end
   #   export do; end
@@ -98,14 +98,14 @@ RailsAdmin.config do |config|
   # end
   # config.model Descriptor do
   #   # Found associations:
-  #     configure :item, :belongs_to_association 
-  #     configure :values, :has_many_association 
+  #     configure :item, :belongs_to_association
+  #     configure :values, :has_many_association
   #     configure :characteristics, :has_many_association   #   # Found columns:
-  #     configure :id, :integer 
-  #     configure :name, :string 
-  #     configure :item_id, :integer         # Hidden 
-  #     configure :datatype, :integer 
-  #     configure :created_at, :datetime 
+  #     configure :id, :integer
+  #     configure :name, :string
+  #     configure :item_id, :integer         # Hidden
+  #     configure :datatype, :integer
+  #     configure :created_at, :datetime
   #     configure :updated_at, :datetime   #   # Sections:
   #   list do; end
   #   export do; end
@@ -116,12 +116,12 @@ RailsAdmin.config do |config|
   # end
   # config.model Instance do
   #   # Found associations:
-  #     configure :item, :belongs_to_association 
+  #     configure :item, :belongs_to_association
   #     configure :characteristics, :has_many_association   #   # Found columns:
-  #     configure :id, :integer 
-  #     configure :name, :string 
-  #     configure :item_id, :integer         # Hidden 
-  #     configure :created_at, :datetime 
+  #     configure :id, :integer
+  #     configure :name, :string
+  #     configure :item_id, :integer         # Hidden
+  #     configure :created_at, :datetime
   #     configure :updated_at, :datetime   #   # Sections:
   #   list do; end
   #   export do; end
@@ -132,11 +132,11 @@ RailsAdmin.config do |config|
   # end
   # config.model Item do
   #   # Found associations:
-  #     configure :descriptors, :has_many_association 
+  #     configure :descriptors, :has_many_association
   #     configure :instances, :has_many_association   #   # Found columns:
-  #     configure :id, :integer 
-  #     configure :name, :string 
-  #     configure :created_at, :datetime 
+  #     configure :id, :integer
+  #     configure :name, :string
+  #     configure :created_at, :datetime
   #     configure :updated_at, :datetime   #   # Sections:
   #   list do; end
   #   export do; end
@@ -148,10 +148,10 @@ RailsAdmin.config do |config|
   # config.model Value do
   #   # Found associations:
   #     configure :descriptor, :belongs_to_association   #   # Found columns:
-  #     configure :id, :integer 
-  #     configure :name, :string 
-  #     configure :descriptor_id, :integer         # Hidden 
-  #     configure :created_at, :datetime 
+  #     configure :id, :integer
+  #     configure :name, :string
+  #     configure :descriptor_id, :integer         # Hidden
+  #     configure :created_at, :datetime
   #     configure :updated_at, :datetime   #   # Sections:
   #   list do; end
   #   export do; end
@@ -161,3 +161,4 @@ RailsAdmin.config do |config|
   #   update do; end
   # end
 end
+

@@ -1,4 +1,6 @@
 Ontology::Application.routes.draw do
+  resources :relationships
+
   resources :subitems
 
   mount RailsAdmin::Engine => '/admin', :as => 'rails_admin'

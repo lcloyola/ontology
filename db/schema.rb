@@ -11,7 +11,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20120812145640) do
+ActiveRecord::Schema.define(:version => 20120812151508) do
 
   create_table "characteristics", :force => true do |t|
     t.integer  "descriptor_id"
@@ -55,6 +55,20 @@ ActiveRecord::Schema.define(:version => 20120812145640) do
 
   add_index "rails_admin_histories", ["item", "table", "month", "year"], :name => "index_rails_admin_histories"
 
+  create_table "relationships", :force => true do |t|
+    t.string   "name"
+    t.datetime "created_at", :null => false
+    t.datetime "updated_at", :null => false
+  end
+
+  create_table "subitems", :force => true do |t|
+    t.integer  "relationship_id"
+    t.integer  "parent_id"
+    t.integer  "child_id"
+    t.datetime "created_at",      :null => false
+    t.datetime "updated_at",      :null => false
+  end
+
   create_table "users", :force => true do |t|
     t.string   "email",                  :default => "", :null => false
     t.string   "encrypted_password",     :default => "", :null => false
@@ -81,4 +95,3 @@ ActiveRecord::Schema.define(:version => 20120812145640) do
   end
 
 end
-
