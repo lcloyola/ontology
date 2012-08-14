@@ -7,6 +7,7 @@ class InstancesController < ApplicationController
     respond_to do |format|
       format.html # index.html.erb
       format.json { render json: @instances }
+      format.xml
     end
   end
 
@@ -81,3 +82,4 @@ class InstancesController < ApplicationController
     end
   end
 end
+
